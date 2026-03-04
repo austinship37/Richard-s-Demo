@@ -1,944 +1,307 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richards Mobile Semi Truck Inspection | Professional DOT & Maintenance Inspections</title>
-    <meta name="description" content="Professional mobile semi truck inspection services. DOT inspections, pre-trip checks, and maintenance inspections at your location. Certified inspectors available 24/7.">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Oswald', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#1e40af',
-                        secondary: '#ea580c',
-                        dark: '#0f172a',
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-in',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        }
-                    }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Richards Mobile Truck Inspection | DOT Compliance at Your Yard</title>
+  <meta name="description" content="Premium mobile semi-truck inspection services for fleets and owner-operators. DOT inspections, roadside response, and preventive compliance at your location." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0b1220',
+            steel: '#1f2937',
+            brand: '#1d4ed8',
+            accent: '#f97316'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            display: ['Oswald', 'Inter', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 0 0 1px rgba(255,255,255,0.08), 0 25px 60px -20px rgba(37,99,235,0.45)'
+          }
         }
-    </script>
-    
-    <style>
-        .gradient-text {
-            background: linear-gradient(135deg, #1e40af 0%, #ea580c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-overlay {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 64, 175, 0.85) 100%);
-        }
-        
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
-        }
-        
-        .nav-scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        
-        .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        .blob {
-            position: absolute;
-            filter: blur(40px);
-            opacity: 0.4;
-            z-index: -1;
-        }
-    </style>
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .hero-grid {
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+      background-size: 26px 26px;
+    }
+  </style>
 </head>
-<body class="font-sans text-gray-800 antialiased overflow-x-hidden">
-
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <a href="#" class="flex items-center space-x-2 group">
-                    <div class="bg-white p-2 rounded-lg shadow-lg group-hover:shadow-xl transition-shadow">
-                        <i data-lucide="truck" class="w-8 h-8 text-primary"></i>
-                    </div>
-                    <div>
-                        <span class="font-display font-bold text-2xl text-white nav-text" id="nav-logo-text">RICHARDS</span>
-                        <span class="block text-xs text-gray-300 nav-text-sub tracking-wider">MOBILE INSPECTION</span>
-                    </div>
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#services" class="nav-link text-white hover:text-secondary font-medium transition-colors">Services</a>
-                    <a href="#about" class="nav-link text-white hover:text-secondary font-medium transition-colors">About</a>
-                    <a href="#process" class="nav-link text-white hover:text-secondary font-medium transition-colors">Process</a>
-                    <a href="#testimonials" class="nav-link text-white hover:text-secondary font-medium transition-colors">Reviews</a>
-                    <a href="#contact" class="nav-link text-white hover:text-secondary font-medium transition-colors">Contact</a>
-                    <button onclick="openBookingModal()" class="bg-secondary hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-orange-500/30 flex items-center space-x-2">
-                        <i data-lucide="calendar-check" class="w-4 h-4"></i>
-                        <span>Book Inspection</span>
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button onclick="toggleMobileMenu()" class="md:hidden text-white nav-text">
-                    <i data-lucide="menu" class="w-8 h-8"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="mobile-menu fixed inset-0 z-50 bg-dark md:hidden">
-        <div class="flex flex-col h-full p-6">
-            <div class="flex justify-between items-center mb-12">
-                <span class="font-display font-bold text-2xl text-white">RICHARDS</span>
-                <button onclick="toggleMobileMenu()">
-                    <i data-lucide="x" class="w-8 h-8 text-white"></i>
-                </button>
-            </div>
-            <div class="flex flex-col space-y-6 text-xl">
-                <a href="#services" onclick="toggleMobileMenu()" class="text-white hover:text-secondary transition-colors">Services</a>
-                <a href="#about" onclick="toggleMobileMenu()" class="text-white hover:text-secondary transition-colors">About</a>
-                <a href="#process" onclick="toggleMobileMenu()" class="text-white hover:text-secondary transition-colors">Process</a>
-                <a href="#testimonials" onclick="toggleMobileMenu()" class="text-white hover:text-secondary transition-colors">Reviews</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="text-white hover:text-secondary transition-colors">Contact</a>
-            </div>
-            <div class="mt-auto">
-                <button onclick="openBookingModal(); toggleMobileMenu();" class="w-full bg-secondary text-white py-4 rounded-lg font-semibold text-lg">
-                    Book Inspection Now
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark">
-        <!-- Background Image -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://static.photos/industry/1200x630/42" alt="Semi Truck Inspection" class="w-full h-full object-cover opacity-60">
-            <div class="hero-overlay absolute inset-0"></div>
-        </div>
-
-        <!-- Animated Blobs -->
-        <div class="blob bg-primary w-96 h-96 rounded-full top-0 left-0 animate-pulse-slow"></div>
-        <div class="blob bg-secondary w-80 h-80 rounded-full bottom-0 right-0 animate-pulse-slow" style="animation-delay: 1s;"></div>
-
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
-                    <span class="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
-                    <span class="text-white text-sm font-medium">Available 24/7 for Emergency Inspections</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4 text-secondary"></i>
-                </div>
-                
-                <h1 class="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-slide-up">
-                    Professional Mobile <span class="text-secondary">Semi Truck</span> Inspections
-                </h1>
-                
-                <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto animate-slide-up" style="animation-delay: 0.1s;">
-                    Certified DOT inspections at your location. Keep your fleet compliant and your drivers safe with Richards Mobile Inspection.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style="animation-delay: 0.2s;">
-                    <button onclick="openBookingModal()" class="w-full sm:w-auto bg-secondary hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl hover:shadow-orange-500/30 flex items-center justify-center space-x-2">
-                        <i data-lucide="clipboard-check" class="w-5 h-5"></i>
-                        <span>Schedule Inspection</span>
-                    </button>
-                    <a href="#services" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center space-x-2">
-                        <i data-lucide="play-circle" class="w-5 h-5"></i>
-                        <span>Our Services</span>
-                    </a>
-                </div>
-
-                <!-- Stats -->
-                <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.4s;">
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-secondary font-display">15K+</div>
-                        <div class="text-gray-400 text-sm mt-1">Inspections Done</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-secondary font-display">99%</div>
-                        <div class="text-gray-400 text-sm mt-1">Pass Rate</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-secondary font-display">24/7</div>
-                        <div class="text-gray-400 text-sm mt-1">Availability</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i data-lucide="chevron-down" class="w-8 h-8 text-white/50"></i>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 md:py-32 bg-gray-50 relative overflow-hidden">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-secondary font-semibold tracking-wider uppercase text-sm">What We Offer</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark mt-2 mb-4">Comprehensive Inspection Services</h2>
-                <p class="text-gray-600 text-lg">From routine maintenance checks to detailed DOT compliance inspections, we've got your fleet covered.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="clipboard-list" class="w-7 h-7 text-primary"></i>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-dark mb-3">DOT Inspections</h3>
-                    <p class="text-gray-600 mb-4">Level I-V DOT inspections ensuring full compliance with FMCSA regulations. Certified inspectors with 10+ years experience.</p>
-                    <ul class="space-y-2 text-sm text-gray-500">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Pre-trip & Post-trip</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Annual Inspections</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Periodic Inspections</li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="wrench" class="w-7 h-7 text-secondary"></i>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-dark mb-3">Maintenance Inspections</h3>
-                    <p class="text-gray-600 mb-4">Preventive maintenance checks to catch issues before they become costly breakdowns. Detailed reporting included.</p>
-                    <ul class="space-y-2 text-sm text-gray-500">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Brake Systems</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Suspension & Steering</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Electrical Systems</li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="file-check" class="w-7 h-7 text-green-600"></i>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-dark mb-3">Pre-Purchase Inspections</h3>
-                    <p class="text-gray-600 mb-4">Buying a used truck? Get a comprehensive 150-point inspection before you buy. Save thousands in hidden repair costs.</p>
-                    <ul class="space-y-2 text-sm text-gray-500">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Engine Diagnostics</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Frame Integrity</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Full Documentation</li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="alert-triangle" class="w-7 h-7 text-purple-600"></i>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-dark mb-3">Emergency Roadside</h3>
-                    <p class="text-gray-600 mb-4">Breakdown on the road? We come to you 24/7 for emergency inspections and minor repairs to get you rolling again.</p>
-                    <ul class="space-y-2 text-sm text-gray-500">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>24/7 Response</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Nationwide Coverage</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Fast Turnaround</li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 5 -->
-                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="truck" class="w-7 h-7 text-red-600"></i>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-dark mb-3">Fleet Management</h3>
-                    <p class="text-gray-600 mb-4">Dedicated fleet inspection programs for companies with 5+ trucks. Scheduled maintenance tracking and compliance management.</p>
-                    <ul class="space-y-2 text-sm text-gray-500">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Scheduled Programs</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Digital Records</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Priority Service</li>
-                    </ul>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="service-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
-                        <i data-lucide="award" class="w-7 h-7 text-yellow-600"></i>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-dark mb-3">Certification Training</h3>
-                    <p class="text-gray-600 mb-4">DOT inspection training for your maintenance staff. Get your team certified to perform compliant inspections in-house.</p>
-                    <ul class="space-y-2 text-sm text-gray-500">
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>FMCSA Certified</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Hands-on Training</li>
-                        <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i>Certificate Included</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 md:py-32 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://static.photos/mechanic/640x360/88" alt="Richard - Lead Inspector" class="w-full h-auto">
-                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-dark/90 to-transparent p-6">
-                            <p class="text-white font-display text-xl">Richard Mitchell</p>
-                            <p class="text-gray-300">Founder & Lead Inspector</p>
-                        </div>
-                    </div>
-                    <!-- Floating Badge -->
-                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden md:block">
-                        <div class="flex items-center space-x-3">
-                            <div class="bg-green-100 p-3 rounded-full">
-                                <i data-lucide="shield-check" class="w-8 h-8 text-green-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-dark text-lg">15+ Years</p>
-                                <p class="text-gray-500 text-sm">Experience</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <span class="text-secondary font-semibold tracking-wider uppercase text-sm">About Richards</span>
-                    <h2 class="font-display text-4xl md:text-5xl font-bold text-dark mt-2 mb-6">Trusted By Truckers Nationwide</h2>
-                    <p class="text-gray-600 text-lg mb-6">
-                        Founded in 2009, Richards Mobile Inspection started with a simple mission: make truck inspections convenient, thorough, and hassle-free. We understand that downtime costs money, which is why we bring the inspection bay to you.
-                    </p>
-                    <p class="text-gray-600 text-lg mb-8">
-                        Our certified inspectors have over 50 years of combined experience in heavy-duty truck maintenance and DOT compliance. We inspect everything from Class 8 semis to light-duty commercial vehicles.
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-6 mb-8">
-                        <div class="flex items-start space-x-3">
-                            <i data-lucide="badge-check" class="w-6 h-6 text-primary flex-shrink-0 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-dark">FMCSA Certified</h4>
-                                <p class="text-sm text-gray-500">Fully licensed inspectors</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <i data-lucide="clock" class="w-6 h-6 text-primary flex-shrink-0 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-dark">On-Time Service</h4>
-                                <p class="text-sm text-gray-500">We value your schedule</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <i data-lucide="file-text" class="w-6 h-6 text-primary flex-shrink-0 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-dark">Digital Reports</h4>
-                                <p class="text-sm text-gray-500">Instant documentation</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <i data-lucide="headphones" class="w-6 h-6 text-primary flex-shrink-0 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-dark">24/7 Support</h4>
-                                <p class="text-sm text-gray-500">Always here to help</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <button onclick="openBookingModal()" class="bg-primary hover:bg-blue-800 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg inline-flex items-center space-x-2">
-                        <span>Meet Our Team</span>
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section id="process" class="py-20 md:py-32 bg-dark text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <img src="https://static.photos/textures/1200x630/5" alt="Background" class="w-full h-full object-cover">
-        </div>
-        
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-secondary font-semibold tracking-wider uppercase text-sm">How It Works</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold mt-2 mb-4">Simple 4-Step Process</h2>
-                <p class="text-gray-400 text-lg">Getting your truck inspected has never been easier. We handle the logistics so you can focus on driving.</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="relative">
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 h-full hover:bg-white/20 transition-colors">
-                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">1</div>
-                        <h3 class="font-display text-xl font-bold mb-3">Book Online</h3>
-                        <p class="text-gray-400">Schedule your inspection through our website or call us directly. Choose your preferred date and location.</p>
-                    </div>
-                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-secondary">
-                        <i data-lucide="arrow-right" class="w-8 h-8"></i>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 h-full hover:bg-white/20 transition-colors">
-                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">2</div>
-                        <h3 class="font-display text-xl font-bold mb-3">We Come To You</h3>
-                        <p class="text-gray-400">Our mobile unit arrives at your location with all necessary equipment. No need to drive to a shop.</p>
-                    </div>
-                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-secondary">
-                        <i data-lucide="arrow-right" class="w-8 h-8"></i>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 h-full hover:bg-white/20 transition-colors">
-                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">3</div>
-                        <h3 class="font-display text-xl font-bold mb-3">Thorough Inspection</h3>
-                        <p class="text-gray-400">Complete 150-point inspection taking 45-90 minutes depending on vehicle type and condition.</p>
-                    </div>
-                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-secondary">
-                        <i data-lucide="arrow-right" class="w-8 h-8"></i>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 h-full hover:bg-white/20 transition-colors">
-                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mb-6">4</div>
-                        <h3 class="font-display text-xl font-bold mb-3">Digital Report</h3>
-                        <p class="text-gray-400">Receive your certified inspection report instantly via email. Pass or fail, you'll know exactly where you stand.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 md:py-32 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-secondary font-semibold tracking-wider uppercase text-sm">Testimonials</span>
-                <h2 class="font-display text-4xl md:text-5xl font-bold text-dark mt-2 mb-4">What Truckers Say</h2>
-                <p class="text-gray-600 text-lg">Don't just take our word for it. Here's what professional drivers and fleet managers have to say.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6">"Richard saved me hours of downtime. He came to our yard at 6 AM before our drivers hit the road. Professional, thorough, and fast. Best inspection service I've used in 20 years of trucking."</p>
-                    <div class="flex items-center space-x-4">
-                        <img src="https://static.photos/people/200x200/12" alt="Client" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <p class="font-bold text-dark">Mike Johnson</p>
-                            <p class="text-sm text-gray-500">Owner, Johnson Freight Lines</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6">"We have a fleet of 40 trucks and Richards handles all our DOT inspections. Their digital reporting system makes record-keeping a breeze. Highly recommend for any fleet operation."</p>
-                    <div class="flex items-center space-x-4">
-                        <img src="https://static.photos/people/200x200/33" alt="Client" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <p class="font-bold text-dark">Sarah Chen</p>
-                            <p class="text-sm text-gray-500">Fleet Manager, Apex Transport</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-                    <div class="flex text-yellow-400 mb-4">
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                    </div>
-                    <p class="text-gray-600 mb-6">"Broke down on I-95 at 2 AM. Called Richards emergency line and they had someone there within an hour. Got me back on the road with a clean inspection. Lifesavers!"</p>
-                    <div class="flex items-center space-x-4">
-                        <img src="https://static.photos/people/200x200/45" alt="Client" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <p class="font-bold text-dark">David Rodriguez</p>
-                            <p class="text-sm text-gray-500">Independent Owner-Operator</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 md:py-32 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div>
-                    <span class="text-secondary font-semibold tracking-wider uppercase text-sm">Get In Touch</span>
-                    <h2 class="font-display text-4xl md:text-5xl font-bold text-dark mt-2 mb-6">Ready to Schedule Your Inspection?</h2>
-                    <p class="text-gray-600 text-lg mb-8">
-                        Fill out the form and we'll get back to you within 30 minutes during business hours. For emergency inspections, please call our 24/7 hotline.
-                    </p>
-
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="phone" class="w-6 h-6 text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-dark text-lg">Phone</h4>
-                                <p class="text-gray-600">(555) 123-4567</p>
-                                <p class="text-sm text-secondary">24/7 Emergency Line Available</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="mail" class="w-6 h-6 text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-dark text-lg">Email</h4>
-                                <p class="text-gray-600">inspect@richardstrucks.com</p>
-                                <p class="text-sm text-gray-500">We reply within 30 minutes</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="map-pin" class="w-6 h-6 text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-dark text-lg">Service Area</h4>
-                                <p class="text-gray-600">Nationwide Mobile Service</p>
-                                <p class="text-sm text-gray-500">Based in Chicago, IL - Covering all 48 states</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="John">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                                <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Doe">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                            <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="john@company.com">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                            <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="(555) 123-4567">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
-                            <select required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">
-                                <option value="">Select a service...</option>
-                                <option value="dot">DOT Inspection</option>
-                                <option value="maintenance">Maintenance Inspection</option>
-                                <option value="prepurchase">Pre-Purchase Inspection</option>
-                                <option value="emergency">Emergency Roadside</option>
-                                <option value="fleet">Fleet Program</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Tell us about your truck and when you need service..."></textarea>
-                        </div>
-
-                        <button type="submit" id="submitBtn" class="w-full bg-primary hover:bg-blue-800 text-white font-bold py-4 rounded-lg transition-all transform hover:scale-[1.02] shadow-lg flex items-center justify-center space-x-2">
-                            <span>Send Message</span>
-                            <i data-lucide="send" class="w-5 h-5"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-secondary relative overflow-hidden">
-        <div class="absolute inset-0 bg-orange-600 opacity-50"></div>
-        <div class="absolute inset-0 opacity-20">
-            <img src="https://static.photos/textures/1200x630/9" alt="Background" class="w-full h-full object-cover">
-        </div>
-        
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Don't Risk Your CDL or Your Safety</h2>
-            <p class="text-white/90 text-xl mb-8 max-w-2xl mx-auto">Get your inspection done right the first time. Professional, certified, and convenient. Book now and get 10% off your first inspection.</p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <button onclick="openBookingModal()" class="bg-white text-secondary hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl">
-                    Book Now - 10% Off
-                </button>
-                <a href="tel:5551234567" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-secondary px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center space-x-2">
-                    <i data-lucide="phone" class="w-5 h-5"></i>
-                    <span>Call (555) 123-4567</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white pt-16 pb-8">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-12">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <i data-lucide="truck" class="w-8 h-8 text-secondary"></i>
-                        <span class="font-display font-bold text-2xl">RICHARDS</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Professional mobile semi truck inspection services. Keeping America's truckers safe and compliant since 2009.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#services" class="hover:text-secondary transition-colors">DOT Inspections</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Maintenance Checks</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Pre-Purchase</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Emergency Roadside</a></li>
-                        <li><a href="#services" class="hover:text-secondary transition-colors">Fleet Programs</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Company</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#about" class="hover:text-secondary transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-secondary transition-colors">Careers</a></li>
-                        <li><a href="#" class="hover:text-secondary transition-colors">Blog</a></li>
-                        <li><a href="#contact" class="hover:text-secondary transition-colors">Contact</a></li>
-                        <li><a href="#" class="hover:text-secondary transition-colors">Privacy Policy</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-lg mb-4">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">Get inspection tips and industry updates.</p>
-                    <form class="flex flex-col space-y-2">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-secondary">
-                        <button type="button" class="bg-secondary hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors">
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">&copy; 2024 Richards Mobile Inspection. All rights reserved.</p>
-                <div class="flex items-center space-x-4 mt-4 md:mt-0 text-sm text-gray-400">
-                    <span>FMCSA Certified</span>
-                    <span>•</span>
-                    <span>Bonded & Insured</span>
-                    <span>•</span>
-                    <span>DOT Compliant</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Booking Modal -->
-    <div id="bookingModal" class="fixed inset-0 z-50 hidden">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeBookingModal()"></div>
-        <div class="absolute inset-0 flex items-center justify-center p-4">
-            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto animate-slide-up">
-                <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
-                    <h3 class="font-display text-2xl font-bold text-dark">Book Inspection</h3>
-                    <button onclick="closeBookingModal()" class="text-gray-500 hover:text-dark">
-                        <i data-lucide="x" class="w-6 h-6"></i>
-                    </button>
-                </div>
-                <div class="p-6">
-                    <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                                <input type="text" required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
-                                <input type="tel" required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary outline-none">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                            <input type="email" required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary outline-none">
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Service Type *</label>
-                                <select required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary outline-none">
-                                    <option value="">Select...</option>
-                                    <option value="dot">DOT Inspection ($150)</option>
-                                    <option value="maintenance">Maintenance Check ($200)</option>
-                                    <option value="prepurchase">Pre-Purchase ($350)</option>
-                                    <option value="emergency">Emergency Service ($250/hr)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Date *</label>
-                                <input type="date" required class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary outline-none">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Location/Address *</label>
-                            <input type="text" required placeholder="Where should we meet you?" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary outline-none">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Vehicle Info</label>
-                            <input type="text" placeholder="Year, Make, Model, VIN (optional)" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary outline-none">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Additional Notes</label>
-                            <textarea rows="3" placeholder="Any specific concerns or issues?" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary outline-none"></textarea>
-                        </div>
-
-                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                            <div class="flex items-start space-x-2">
-                                <i data-lucide="info" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"></i>
-                                <p class="text-sm text-blue-800">You will receive a confirmation call within 30 minutes. For same-day service, please call (555) 123-4567.</p>
-                            </div>
-                        </div>
-
-                        <button type="submit" id="bookingSubmitBtn" class="w-full bg-secondary hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition-colors flex items-center justify-center space-x-2">
-                            <span>Confirm Booking</span>
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Success Toast -->
-    <div id="successToast" class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl transform translate-y-24 transition-transform duration-300 z-50 flex items-center space-x-3">
-        <i data-lucide="check-circle" class="w-6 h-6"></i>
+<body class="bg-slate-50 text-slate-800 antialiased">
+  <header class="fixed top-0 z-50 w-full border-b border-white/10 bg-ink/90 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a href="#" class="flex items-center gap-3">
+        <div class="rounded-xl bg-white p-2"><i data-lucide="truck" class="h-6 w-6 text-brand"></i></div>
         <div>
-            <p class="font-bold">Success!</p>
-            <p class="text-sm">We'll contact you shortly.</p>
+          <p class="font-display text-2xl leading-none text-white">RICHARDS</p>
+          <p class="text-xs tracking-[0.22em] text-slate-300">MOBILE INSPECTION</p>
         </div>
+      </a>
+      <nav class="hidden items-center gap-7 text-sm font-semibold text-slate-200 md:flex">
+        <a href="#services" class="hover:text-accent">Services</a>
+        <a href="#why" class="hover:text-accent">Why Us</a>
+        <a href="#gallery" class="hover:text-accent">Gallery</a>
+        <a href="#pricing" class="hover:text-accent">Pricing</a>
+        <a href="#faq" class="hover:text-accent">FAQ</a>
+      </nav>
+      <a href="#contact" class="rounded-full bg-accent px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-orange-500/30 transition hover:scale-105">Book Inspection</a>
     </div>
+  </header>
 
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+  <main>
+    <section class="relative overflow-hidden bg-ink pt-32 pb-24 text-white">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1800&q=80" alt="Semi truck at inspection yard" class="h-full w-full object-cover opacity-30" />
+      </div>
+      <div class="hero-grid absolute inset-0 opacity-40"></div>
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const logoText = document.getElementById('nav-logo-text');
-            const navTexts = document.querySelectorAll('.nav-text');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            if (window.scrollY > 50) {
-                navbar.classList.add('nav-scrolled', 'py-2');
-                navbar.classList.remove('bg-transparent', 'py-4');
-                logoText.classList.remove('text-white');
-                logoText.classList.add('text-primary');
-                navTexts.forEach(el => {
-                    el.classList.remove('text-white', 'text-gray-300');
-                    el.classList.add('text-gray-800');
-                });
-                navLinks.forEach(el => {
-                    el.classList.remove('text-white');
-                    el.classList.add('text-gray-800');
-                });
-            } else {
-                navbar.classList.remove('nav-scrolled', 'py-2');
-                navbar.classList.add('bg-transparent', 'py-4');
-                logoText.classList.add('text-white');
-                logoText.classList.remove('text-primary');
-                navTexts.forEach(el => {
-                    el.classList.add('text-white');
-                    el.classList.remove('text-gray-800');
-                });
-                navLinks.forEach(el => {
-                    el.classList.add('text-white');
-                    el.classList.remove('text-gray-800');
-                });
-            }
-        });
+      <div class="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-300/40 bg-green-400/10 px-4 py-2 text-sm font-semibold text-green-200">
+            <span class="h-2 w-2 rounded-full bg-green-300"></span> 24/7 Dispatch • Same-Day Slots
+          </span>
+          <h1 class="mt-6 font-display text-5xl leading-tight sm:text-6xl">DOT-Ready Trucks. <span class="text-accent">Zero Guesswork.</span></h1>
+          <p class="mt-6 max-w-xl text-lg text-slate-200">Premium mobile truck inspections for owner-operators and fleets. We come to your yard, terminal, or roadside location with a documented process built to reduce violations and downtime.</p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#contact" class="rounded-full bg-accent px-8 py-4 font-bold text-white shadow-xl shadow-orange-500/30">Schedule an Inspection</a>
+            <a href="#services" class="rounded-full border border-white/30 px-8 py-4 font-bold text-white hover:bg-white/10">View Services</a>
+          </div>
+          <div class="mt-10 grid max-w-xl grid-cols-3 gap-5">
+            <div class="glass rounded-2xl p-4 text-center">
+              <p class="font-display text-3xl text-accent">18K+</p>
+              <p class="text-xs uppercase tracking-wide text-slate-200">Inspections</p>
+            </div>
+            <div class="glass rounded-2xl p-4 text-center">
+              <p class="font-display text-3xl text-accent">98.7%</p>
+              <p class="text-xs uppercase tracking-wide text-slate-200">Pass Compliance</p>
+            </div>
+            <div class="glass rounded-2xl p-4 text-center">
+              <p class="font-display text-3xl text-accent">45-90m</p>
+              <p class="text-xs uppercase tracking-wide text-slate-200">Avg Turnaround</p>
+            </div>
+          </div>
+        </div>
 
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('active');
-            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
-        }
+        <div class="rounded-3xl border border-white/20 bg-white/10 p-6 shadow-glow backdrop-blur">
+          <p class="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-200">Inspection Snapshot</p>
+          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80" alt="Inspector checking truck tires" class="h-72 w-full rounded-2xl object-cover" />
+          <div class="mt-5 grid grid-cols-2 gap-4 text-sm">
+            <div class="rounded-xl bg-white/10 p-4">
+              <p class="font-bold">Level I-V DOT</p>
+              <p class="text-slate-300">Certified process</p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4">
+              <p class="font-bold">Digital Reports</p>
+              <p class="text-slate-300">Photos + notes</p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4">
+              <p class="font-bold">Fleet Programs</p>
+              <p class="text-slate-300">5 to 500 assets</p>
+            </div>
+            <div class="rounded-xl bg-white/10 p-4">
+              <p class="font-bold">Emergency Support</p>
+              <p class="text-slate-300">Roadside response</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Modal functions
-        function openBookingModal() {
-            document.getElementById('bookingModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
-        }
+    <section id="services" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-accent">Core Services</p>
+          <h2 class="mt-3 font-display text-4xl text-ink sm:text-5xl">Inspection Solutions Built for Commercial Trucks</h2>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <i data-lucide="clipboard-list" class="h-8 w-8 text-brand"></i>
+            <h3 class="mt-4 text-xl font-bold text-ink">DOT Compliance Inspections</h3>
+            <p class="mt-2 text-slate-600">Federal-level inspections, annuals, and PM checklists completed on-site with clear pass/fail criteria.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <i data-lucide="wrench" class="h-8 w-8 text-accent"></i>
+            <h3 class="mt-4 text-xl font-bold text-ink">Preventive Maintenance Audits</h3>
+            <p class="mt-2 text-slate-600">Brake, suspension, tire, and electrical review to catch expensive failures before they become downtime.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <i data-lucide="shield-alert" class="h-8 w-8 text-emerald-600"></i>
+            <h3 class="mt-4 text-xl font-bold text-ink">Roadside Emergency Inspections</h3>
+            <p class="mt-2 text-slate-600">Rapid-response support for urgent compliance checks and immediate next-step documentation.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <i data-lucide="search-check" class="h-8 w-8 text-purple-600"></i>
+            <h3 class="mt-4 text-xl font-bold text-ink">Pre-Purchase Evaluation</h3>
+            <p class="mt-2 text-slate-600">150-point condition review before buying used equipment, including risk flags and photo evidence.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <i data-lucide="building-2" class="h-8 w-8 text-rose-600"></i>
+            <h3 class="mt-4 text-xl font-bold text-ink">Fleet Compliance Programs</h3>
+            <p class="mt-2 text-slate-600">Recurring inspection cadence, reminder workflows, and centralized records for audits.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+            <i data-lucide="graduation-cap" class="h-8 w-8 text-yellow-600"></i>
+            <h3 class="mt-4 text-xl font-bold text-ink">Staff Readiness Workshops</h3>
+            <p class="mt-2 text-slate-600">In-house training on inspection readiness and documentation standards for shop teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        function closeBookingModal() {
-            document.getElementById('bookingModal').classList.add('hidden');
-            document.body.style.overflow = '';
-        }
+    <section id="why" class="bg-ink py-20 text-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-accent">Why Fleets Choose Richards</p>
+          <h2 class="mt-3 font-display text-4xl sm:text-5xl">A Process Designed for Audit-Proof Confidence</h2>
+          <ul class="mt-8 space-y-5">
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="mt-1 h-5 w-5 text-green-400"></i><span>Clear defect grading and immediate next-step actions, not vague notes.</span></li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="mt-1 h-5 w-5 text-green-400"></i><span>Timestamped digital reports with photos you can share with safety and maintenance.</span></li>
+            <li class="flex gap-3"><i data-lucide="check-circle-2" class="mt-1 h-5 w-5 text-green-400"></i><span>Flexible mobile scheduling that protects dispatch and driver availability.</span></li>
+          </ul>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div class="rounded-2xl bg-white/10 p-6">
+            <p class="font-display text-4xl text-accent">15+</p>
+            <p class="mt-2 text-slate-200">Years serving commercial trucking operations.</p>
+          </div>
+          <div class="rounded-2xl bg-white/10 p-6">
+            <p class="font-display text-4xl text-accent">50+</p>
+            <p class="mt-2 text-slate-200">Years combined inspector experience.</p>
+          </div>
+          <div class="rounded-2xl bg-white/10 p-6">
+            <p class="font-display text-4xl text-accent">24/7</p>
+            <p class="mt-2 text-slate-200">Emergency hotline and dispatch support.</p>
+          </div>
+          <div class="rounded-2xl bg-white/10 p-6">
+            <p class="font-display text-4xl text-accent">48</p>
+            <p class="mt-2 text-slate-200">States covered through mobile scheduling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // Form handlers
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            const originalContent = btn.innerHTML;
-            
-            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i><span>Sending...</span>';
-            lucide.createIcons();
-            btn.disabled = true;
+    <section id="gallery" class="py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-accent">Visual Proof</p>
+            <h2 class="mt-2 font-display text-4xl text-ink">Real Trucks. Real Yards. Real Inspection Work.</h2>
+          </div>
+          <a href="#contact" class="rounded-full border border-slate-300 px-6 py-3 font-semibold text-ink">Request a Demo Inspection</a>
+        </div>
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=900&q=80" alt="Inspector writing report by truck" class="h-72 w-full rounded-2xl object-cover" />
+          <img src="https://images.unsplash.com/photo-1556122071-e404cb6f31ad?auto=format&fit=crop&w=900&q=80" alt="Fleet trucks in yard" class="h-72 w-full rounded-2xl object-cover" />
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=80" alt="Long-haul truck on highway" class="h-72 w-full rounded-2xl object-cover" />
+          <img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?auto=format&fit=crop&w=900&q=80" alt="Inspection support vehicle at dusk" class="h-72 w-full rounded-2xl object-cover" />
+        </div>
+      </div>
+    </section>
 
-            setTimeout(() => {
-                btn.innerHTML = originalContent;
-                btn.disabled = false;
-                lucide.createIcons();
-                document.getElementById('contactForm').reset();
-                showToast();
-            }, 1500);
-        }
+    <section id="pricing" class="bg-slate-100 py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-accent">Transparent Pricing</p>
+          <h2 class="mt-3 font-display text-4xl text-ink">Simple Packages for Demo-Friendly Sales Conversations</h2>
+        </div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
+          <div class="rounded-2xl border border-slate-200 bg-white p-8">
+            <h3 class="text-xl font-bold text-ink">Single Unit DOT</h3>
+            <p class="mt-3 text-4xl font-extrabold text-ink">$150</p>
+            <p class="mt-4 text-slate-600">Ideal for owner-operators and one-off checks.</p>
+          </div>
+          <div class="rounded-2xl border-2 border-brand bg-white p-8 shadow-xl">
+            <p class="inline-block rounded-full bg-brand px-3 py-1 text-xs font-bold uppercase tracking-wide text-white">Most Popular</p>
+            <h3 class="mt-3 text-xl font-bold text-ink">Fleet Monthly Program</h3>
+            <p class="mt-3 text-4xl font-extrabold text-ink">Custom</p>
+            <p class="mt-4 text-slate-600">Scheduled batches, dashboard reporting, and priority dispatch.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-8">
+            <h3 class="text-xl font-bold text-ink">Emergency Roadside</h3>
+            <p class="mt-3 text-4xl font-extrabold text-ink">$250/hr</p>
+            <p class="mt-4 text-slate-600">24/7 urgent response for compliance-critical calls.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        function handleBookingSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('bookingSubmitBtn');
-            const originalContent = btn.innerHTML;
-            
-            btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i><span>Processing...</span>';
-            lucide.createIcons();
-            btn.disabled = true;
+    <section id="faq" class="py-20">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-accent">FAQ</p>
+          <h2 class="mt-2 font-display text-4xl text-ink">Questions Fleet Managers Ask Most</h2>
+        </div>
+        <div class="mt-10 space-y-4">
+          <details class="rounded-xl border border-slate-200 bg-white p-5" open>
+            <summary class="cursor-pointer font-semibold text-ink">How quickly can you dispatch?</summary>
+            <p class="mt-3 text-slate-600">Most metros can be scheduled same-day, with emergency response windows available 24/7 based on location.</p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="cursor-pointer font-semibold text-ink">Do you provide records for DOT audits?</summary>
+            <p class="mt-3 text-slate-600">Yes. Every inspection includes timestamped digital documentation with findings, photo references, and corrective guidance.</p>
+          </details>
+          <details class="rounded-xl border border-slate-200 bg-white p-5">
+            <summary class="cursor-pointer font-semibold text-ink">Can you handle multi-location fleets?</summary>
+            <p class="mt-3 text-slate-600">Absolutely. We build custom programs for regional and national operations with recurring scheduling and centralized visibility.</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-            setTimeout(() => {
-                btn.innerHTML = originalContent;
-                btn.disabled = false;
-                lucide.createIcons();
-                document.getElementById('bookingForm').reset();
-                closeBookingModal();
-                showToast();
-            }, 1500);
-        }
+    <section id="contact" class="bg-ink py-20 text-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-accent">Book Your Slot</p>
+          <h2 class="mt-2 font-display text-4xl">Ready to Impress Your Safety Team?</h2>
+          <p class="mt-4 text-slate-300">Use this static demo form to showcase your process. No backend needed.</p>
+          <div class="mt-8 space-y-4 text-slate-200">
+            <p class="flex items-center gap-3"><i data-lucide="phone" class="h-5 w-5 text-accent"></i>(555) 123-4567</p>
+            <p class="flex items-center gap-3"><i data-lucide="mail" class="h-5 w-5 text-accent"></i>inspect@richardstrucks.com</p>
+            <p class="flex items-center gap-3"><i data-lucide="map-pin" class="h-5 w-5 text-accent"></i>Based in Chicago • Serving 48 States</p>
+          </div>
+        </div>
+        <form class="rounded-2xl bg-white p-7 text-slate-800">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <input class="rounded-lg border border-slate-300 px-4 py-3" placeholder="First Name" />
+            <input class="rounded-lg border border-slate-300 px-4 py-3" placeholder="Last Name" />
+            <input class="rounded-lg border border-slate-300 px-4 py-3 sm:col-span-2" placeholder="Company Email" />
+            <input class="rounded-lg border border-slate-300 px-4 py-3" placeholder="Phone" />
+            <select class="rounded-lg border border-slate-300 px-4 py-3">
+              <option>Service Needed</option>
+              <option>DOT Inspection</option>
+              <option>Fleet Program</option>
+              <option>Emergency Roadside</option>
+            </select>
+            <textarea class="rounded-lg border border-slate-300 px-4 py-3 sm:col-span-2" rows="4" placeholder="Project details"></textarea>
+          </div>
+          <button type="button" class="mt-5 w-full rounded-full bg-accent px-6 py-3 font-bold text-white">Send Demo Request</button>
+        </form>
+      </div>
+    </section>
+  </main>
 
-        function showToast() {
-            const toast = document.getElementById('successToast');
-            toast.classList.remove('translate-y-24');
-            setTimeout(() => {
-                toast.classList.add('translate-y-24');
-            }, 4000);
-        }
+  <footer class="bg-black py-8 text-center text-sm text-slate-400">
+    <p>© 2026 Richards Mobile Inspection • FMCSA Ready • Bonded & Insured</p>
+  </footer>
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-slide-up');
-                    entry.target.style.opacity = '1';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements
-        document.querySelectorAll('.service-card').forEach(el => {
-            el.style.opacity = '0';
-            observer.observe(el);
-        });
-    </script>
-<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
